@@ -56,7 +56,7 @@ tenant@thingsboard.org (username or email) / tenant (password)
 - Run code: python script.py
 - Log CLI ở DIFP-33 sẽ hiển thị quá trình kết nối, gửi telemetry data đến các device và sẽ hiển thị các lần mô phỏng dữ liệu gửi liên tục (file simulator) lên ThingsBoard
 - Ở ThingsBoard UI: vào Entities => Deivces, click vào từng thành phần sẽ thấy được Attributes và Latest telemetry được đẩy lên từ script.
-
+- Báo cáo kết quả: https://docs.google.com/document/d/1UWHT9UqAFkYXJtqyWry9rfz9KIOSRy0RiOpW2T8rbSs/edit?usp=sharing
 #### Đối với DIFP-38:
 - Mock data: devices.csv, mock_data.csv
 - Trước tiên sẽ tạo Device Profile trên ThingsBoard UI, gồm: HeartRate_DeviceProfile và Temperature_DeviceProfile
@@ -67,3 +67,4 @@ tenant@thingsboard.org (username or email) / tenant (password)
 - Run code: python script.py
 - Log CLI: sẽ thấy tương tự như DIFP-33 (log này sạch hơn 1 tí vì có chỉnh sửa lại cách thể hiện dữ liệu)
 - Ở ThingsBoard UI: vào Entities => Deivces, click vào từng thành phần sẽ thấy được Attributes và Latest telemetry được đẩy lên từ script. Click vào Alarms sẽ thấy được các cảnh báo CRITICAL của 3 device. Để xem được Time series data của các device, thì click vào Dashboard và import file difp-38.json thuộc thư mục "DIFP-38/dashboard", khi chạy lại script sẽ thấy được data được cập nhật real time.
+- Báo cáo kết quả: https://docs.google.com/document/d/1nbYgu2jjI0RHNFYvhYKbDBk6RLhW4iF0g6rHXe-m5tg/edit?usp=sharing
