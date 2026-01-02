@@ -1,4 +1,4 @@
-# ================== THINGSBOARD ====================
+# ThingsBoard + MQTT Integration
 ## 1. Cài đặt ThingsBoard cho Window như hướng dẫn trong tài liệu:
 https://thingsboard.io/docs/user-guide/install/docker-windows/
 
