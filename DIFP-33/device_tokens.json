@@ -1,0 +1,20 @@
+[
+  {
+    "device_id": "cdd5d170-e5ec-11f0-a318-b9a6fa3563dd",
+    "device_name": "device_01",
+    "device_label": "device 01",
+    "access_token": "SK6Xgq3NOOaPlW7AAZfQ"
+  },
+  {
+    "device_id": "cddeab10-e5ec-11f0-a318-b9a6fa3563dd",
+    "device_name": "device_02",
+    "device_label": "device 02",
+    "access_token": "8ZIihzH5GgLzXgcdSRdf"
+  },
+  {
+    "device_id": "cde7d2d0-e5ec-11f0-a318-b9a6fa3563dd",
+    "device_name": "device_03",
+    "device_label": "device 03",
+    "access_token": "ymN1QECqBIVbWta1O4y5"
+  }
+]

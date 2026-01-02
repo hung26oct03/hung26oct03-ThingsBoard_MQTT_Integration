@@ -1,0 +1,62 @@
+[
+    {
+        "id": {
+            "entityType": "DEVICE_PROFILE",
+            "id": "39b45350-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "tenantId": {
+            "entityType": "TENANT",
+            "id": "39a22ae0-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "name": "default",
+        "image": null,
+        "defaultDashboardId": null,
+        "type": "DEFAULT",
+        "transportType": "DEFAULT"
+    },
+    {
+        "id": {
+            "entityType": "DEVICE_PROFILE",
+            "id": "3b4f65b0-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "tenantId": {
+            "entityType": "TENANT",
+            "id": "39a22ae0-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "name": "thermostat",
+        "image": null,
+        "defaultDashboardId": null,
+        "type": "DEFAULT",
+        "transportType": "DEFAULT"
+    },
+    {
+        "id": {
+            "entityType": "DEVICE_PROFILE",
+            "id": "9ccfbcc0-e61f-11f0-a318-b9a6fa3563dd"
+        },
+        "tenantId": {
+            "entityType": "TENANT",
+            "id": "39a22ae0-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "name": "HeartRate_DeviceProfile",
+        "image": null,
+        "defaultDashboardId": null,
+        "type": "DEFAULT",
+        "transportType": "DEFAULT"
+    },
+    {
+        "id": {
+            "entityType": "DEVICE_PROFILE",
+            "id": "ab7a77b0-e61f-11f0-a318-b9a6fa3563dd"
+        },
+        "tenantId": {
+            "entityType": "TENANT",
+            "id": "39a22ae0-e532-11f0-bd1d-e9e25ccf49f9"
+        },
+        "name": "Temperature_DeviceProfile",
+        "image": null,
+        "defaultDashboardId": null,
+        "type": "DEFAULT",
+        "transportType": "DEFAULT"
+    }
+]

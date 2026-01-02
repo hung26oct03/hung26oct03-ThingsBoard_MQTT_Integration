@@ -1,0 +1,4 @@
+device_profile,name,label,metric_type
+HeartRate_DeviceProfile,device_01,device heart rate 01,heart_rate
+Temperature_DeviceProfile,device_02,device temperature 01,temperature
+HeartRate_DeviceProfile,device_03,device heart rate 02,heart_rate

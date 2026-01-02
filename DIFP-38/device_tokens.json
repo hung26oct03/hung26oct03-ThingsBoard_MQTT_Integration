@@ -1,0 +1,20 @@
+[
+  {
+    "device_id": "a0e5d330-e77d-11f0-9331-b9a6fa3563dd",
+    "device_name": "device_01",
+    "device_label": "device heart rate 01",
+    "access_token": "Nked2LmlCV71vc3QVrLH"
+  },
+  {
+    "device_id": "a0f78670-e77d-11f0-9331-b9a6fa3563dd",
+    "device_name": "device_02",
+    "device_label": "device temperature 01",
+    "access_token": "SO8C1Vl0XvJN6h2vaSvL"
+  },
+  {
+    "device_id": "a12e9c00-e77d-11f0-9331-b9a6fa3563dd",
+    "device_name": "device_03",
+    "device_label": "device heart rate 02",
+    "access_token": "XAGIRNzJClitBViUyLta"
+  }
+]
