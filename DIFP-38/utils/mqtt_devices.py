@@ -10,6 +10,7 @@ class DeviceMQTT:
         self.port = port
         self.metric_type = metric_type
         self.connected = False
+        self.published_messages = {}
         
         self.client = mqtt.Client()
         self.client.on_connect = self.on_connect
@@ -20,18 +21,18 @@ class DeviceMQTT:
     def on_connect(self, client, userdata, flags, rc):
         if rc == 0:
             self.connected = True
-            print('Kết nối thành công')
+            print(f'[{self.device_name}] Kết nối thành công')
         else:
             self.connected = False
-            print('Kết nối thất bại')
+            print(f'[{self.device_name}] Kết nối thất bại')
             
     def on_publish(self, client, userdata, mid):
-        print(f"[{self.device_name}] => đã gửi telemetry (msg_id: {mid})")
-        time.sleep(1)
+        msg_type = self.published_messages.pop(mid, "unknown")
+        print(f"[{self.device_name}] => đã gửi {msg_type} (msg_id: {mid})")
         
     def on_disconnect(self, client, userdata, rc):
         self.connected = False
-        print('Mất kết nối')
+        print(f'[{self.device_name}] Mất kết nối')
         
     def connect(self):
         try:
@@ -40,7 +41,7 @@ class DeviceMQTT:
             time.sleep(1)
             return self.connected
         except Exception as e:
-            print('Lỗi kết nối: ', e)
+            print(f'[{self.device_name}] Lỗi kết nối: ', e)
             return False
     
     def publish_telemetry(self, data):
@@ -51,6 +52,7 @@ class DeviceMQTT:
         payload = json.dumps(data)
         
         result = self.client.publish(topic, payload, qos=1)
+        self.published_messages[result.mid] = "telemetry"
         return result.rc == mqtt.MQTT_ERR_SUCCESS
     
     def publish_attributes(self, attributes):
@@ -59,11 +61,13 @@ class DeviceMQTT:
         
         topic = 'v1/devices/me/attributes'
         payload = json.dumps(attributes)
-        # print(f"Check payload attributes: {payload}")
+        print(f'Check payload: {payload}')
         result = self.client.publish(topic, payload, qos=1)
+        self.published_messages[result.mid] = "attributes"
+        result.wait_for_publish() 
         return result.rc == mqtt.MQTT_ERR_SUCCESS
     
     def disconnect(self):
         self.client.loop_stop()
         self.client.disconnect()
-        print('Đã ngắt kết nối OK')
+        print(f'[{self.device_name}] Đã ngắt kết nối OK')

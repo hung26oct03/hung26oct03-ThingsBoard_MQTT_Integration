@@ -86,10 +86,12 @@ class DeviceSimulator:
             device.publish_attributes(attributes)
         
         print('Check: Đã gửi attributes')
+        time.sleep(2)
     
     def simulator_telemetry_publishing(self, num_rounds=5, interval=5):
         try:
             for round_num in range(1, num_rounds + 1):
+                print(f"\n=> Gửi lần {round_num}")
                 for device in self.devices:
                     value = self.get_next_mock_value(device.metric_type)
                     
@@ -98,8 +100,6 @@ class DeviceSimulator:
                     }
                     
                     device.publish_telemetry(telemetry_data)
-                    
-                print(f"\nLần {round_num} OKE")
                 
                 time.sleep(interval)
         except KeyboardInterrupt:
