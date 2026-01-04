@@ -1,0 +1,4 @@
+tenant_profile,device_profile,name,label
+tenant_profile_01,device_profile_01,device_01,device 01
+tenant_profile_01,device_profile_01,device_02,device 02
+tenant_profile_01,device_profile_01,device_03,device 03

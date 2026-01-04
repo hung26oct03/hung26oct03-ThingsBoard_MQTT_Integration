@@ -68,3 +68,12 @@ tenant@thingsboard.org (username or email) / tenant (password)
 - Log CLI: sẽ thấy tương tự như DIFP-33 (log này sạch hơn 1 tí vì có chỉnh sửa lại cách thể hiện dữ liệu)
 - Ở ThingsBoard UI: vào Entities => Deivces, click vào từng thành phần sẽ thấy được Attributes và Latest telemetry được đẩy lên từ script. Click vào Alarms sẽ thấy được các cảnh báo CRITICAL của 3 device. Để xem được Time series data của các device, thì click vào Dashboard và import file difp-38.json thuộc thư mục "DIFP-38/dashboard", khi chạy lại script sẽ thấy được data được cập nhật real time.
 - Báo cáo kết quả: https://docs.google.com/document/d/1nbYgu2jjI0RHNFYvhYKbDBk6RLhW4iF0g6rHXe-m5tg/edit?usp=sharing
+#### Đối với DIFP-42:
+- Mock data: tenants.csv, tenants_admin.csv, customers.csv, customer_user.csv, devices.csv
+- File thingsboard.py được thiết kế với đầy đủ các chức năng hơn những DIFP lần trước, với các chức năng được thiết kế cho cả 3 role: System Admin, Tenant Admin và Customer User
+- Để có thể chạy được file script.py, trước tiên phải sử dụng ThingsBoard UI đăng nhập với role System Admin để tạo Tenant Profile. Tạo Mail Server và mật khẩu ứng dụng để ThingsBoard có thể gửi mail về tài khoản user, user sẽ dùng link này để set mật khẩu tài khoản của họ
+- File script.py chứa kịch bản theo thứ tự: 
+Đăng nhập với tài khoản System Admin => Thêm Tenant => Tạo tài khoản Tenant Admin
+Đăng nhập với tài khoản Tenant Admin => Thêm Customer => Tạo tài khoản Customer User => Thêm Device => Gán Device và Dashboard cho Customer User
+File này còn sẽ gửi telemetry data chứa dữ liệu heart_rate và temperature lên ThingsBoard UI
+- Báo cáo kết quả: https://docs.google.com/document/d/1h7T3HvBCgEetfzYFXsar91N7VAgbacrUr30ri9ULpes/edit?usp=sharing
