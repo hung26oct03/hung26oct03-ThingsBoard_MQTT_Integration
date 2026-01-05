@@ -304,7 +304,7 @@ class ThingsBoard:
             res.raise_for_status()
             return res.json(), action
         except Exception as e:
-            print(f" [X] Lỗi {action} {device_name}: {e}")
+            print(f"Lỗi {action} {device_name}: {e}")
             return None, None
         
     def delete_device(self, device_name):
