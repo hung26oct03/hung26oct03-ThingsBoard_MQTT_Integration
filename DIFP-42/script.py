@@ -21,7 +21,7 @@ csv_file_devices = 'devices.csv'
 
 json_file_tenant_profiles = 'tenant_profiles.json'
 
-def get_first_row(file_path):
+def get_first_row(file_path): # Test
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -32,8 +32,8 @@ def get_first_row(file_path):
 def run_main():
     try:
         # ========== System Admin ===========
-        # print('1. Đăng nhập với tài khoản System Admin')
-        # api_admin = ThingsBoard(TB_HOST, TB_USER, TB_PASS)
+        print('1. Đăng nhập với tài khoản System Admin')
+        api_admin = ThingsBoard(TB_HOST, "nguyenthanhhung26102003@gmail.com", "26102003")
         
         # print('2. Thêm Tenant')
         # with open(csv_file_tenant, 'r', encoding='utf-8') as f:
@@ -41,15 +41,15 @@ def run_main():
         #     for row in reader:
         #         api_admin.add_tenant(row)
                 
-        # print('3. Tạo tài khoản Tenant Admin')
-        # with open(csv_file_tenant_admin, 'r', encoding='utf-8') as f:
-        #     reader = csv.DictReader(f)
-        #     for row in reader:
-        #         api_admin.add_tenant_admin(row)
+        print('3. Tạo tài khoản Tenant Admin')
+        with open(csv_file_tenant_admin, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                api_admin.add_tenant_admin(row)
                 
         # ========== Tenant ===========
         print('1. Đăng nhập với tài khoản Tenant Admin')
-        api_tenant_admin = ThingsBoard(TB_HOST, TB_USER, TB_PASS)
+        api_tenant_admin = ThingsBoard(TB_HOST, "nth0326zz@gmail.com", "26102003")
         
         # print('2. Thêm Customer')  
         # with open(csv_file_customer, 'r', encoding='utf-8') as f:
